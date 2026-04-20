@@ -20,7 +20,7 @@ const services = [
     title: "Walkways & Stairs",
     slug: "walkways-stairs",
     desc: "The approach to your house, poured right.",
-    img: "/images/walkways-stairs/stairs_1_zoomed_out.jpeg",
+    img: "/images/walkways-stairs/walkways_stairs_15_down_stairs.jpeg",
   },
   {
     title: "Retaining Walls",
@@ -32,7 +32,7 @@ const services = [
     title: "Foundations",
     slug: "foundation-work",
     desc: "Slab-on-grade, footings, stem walls. The part you don't see.",
-    img: "/images/foundations/foundation_1_bathroom.jpeg",
+    img: "/images/other/other_4_bolt.jpeg",
   },
   {
     title: "Repair & Reconditioning",
@@ -55,7 +55,7 @@ export default function HomePage() {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/images/driveways/driveway_5_stamped_wide.jpeg')",
+            backgroundImage: "url('/images/driveways/driveway_5_modern_garage.jpeg')",
             backgroundSize: "cover",
             backgroundPosition: "center 70%",
             opacity: 0.14,
