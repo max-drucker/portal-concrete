@@ -121,10 +121,10 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2">
               <a
-                href="tel:+12068296396"
+                href="/contact"
                 style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.9rem" }}
               >
-                (206) 829-6396
+                Get in touch
               </a>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem" }}>
                 West Seattle, WA

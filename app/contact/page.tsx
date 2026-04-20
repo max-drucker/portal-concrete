@@ -6,7 +6,7 @@ import CalEmbed from "@/components/CalEmbed";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get a free estimate from Portal Concrete — West Seattle's residential concrete studio. Call (206) 829-6396 or fill out the form.",
+  description: "Get a free estimate from Portal Concrete — West Seattle's residential concrete studio. Fill out the form and Chris will be in touch.",
 };
 
 const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK ?? "portal-concrete/consultation";
@@ -34,8 +34,8 @@ export default function ContactPage() {
           <div style={{ display: "flex", gap: "2.5rem", marginTop: "2.5rem", flexWrap: "wrap" }}>
             <div>
               <p style={{ fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "0.4rem" }}>Phone</p>
-              <a href="tel:+12068296396" style={{ fontFamily: "var(--font-anton, 'Anton', sans-serif)", fontSize: "1.4rem", color: "#FFFFFF", letterSpacing: "0.04em" }}>
-                (206) 829-6396
+              <a href="https://www.instagram.com/portal.llc/" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-anton, 'Anton', sans-serif)", fontSize: "1.4rem", color: "#FFFFFF", letterSpacing: "0.04em" }}>
+                @portal.llc
               </a>
             </div>
             <div>

@@ -39,7 +39,7 @@ export default function ContactForm() {
       formRef.current?.reset();
     } catch (err) {
       setState("error");
-      setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please call us at (206) 829-6396.");
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again or reach out via Instagram @portal.llc.");
     }
   }
 
@@ -91,7 +91,7 @@ export default function ContactForm() {
           lineHeight: 1.7,
         }}>
           Chris typically responds within a few hours. If it&rsquo;s urgent, call{" "}
-          <a href="tel:+12068296396" style={{ color: "#FF6B1A" }}>(206) 829-6396</a>.
+          Instagram <a href="https://www.instagram.com/portal.llc/" style={{ color: "#FF6B1A" }}>@portal.llc</a>.</p><p>
         </p>
       </div>
     );
@@ -163,7 +163,7 @@ export default function ContactForm() {
       </button>
 
       <p style={{ fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)", fontSize: "0.75rem", color: "rgba(255,255,255,0.25)", lineHeight: 1.6 }}>
-        Or call directly: <a href="tel:+12068296396" style={{ color: "rgba(255,255,255,0.4)" }}>(206) 829-6396</a>. Free estimates, no obligation.
+        Free estimates, no obligation. Or reach out on Instagram <a href="https://www.instagram.com/portal.llc/" style={{ color: "rgba(255,255,255,0.4)" }}>@portal.llc</a>.
       </p>
     </form>
   );
