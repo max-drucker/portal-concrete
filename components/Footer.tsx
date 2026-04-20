@@ -121,16 +121,25 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2">
               <a
-                href="/contact"
-                style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.9rem" }}
+                href="tel:+12068296396"
+                style={{ color: "#FF6B1A", fontSize: "1rem", fontWeight: 600, letterSpacing: "0.02em" }}
               >
-                Get in touch
+                (206) 829-6396
               </a>
-              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem" }}>
+              <a
+                href="mailto:chris@buildwithportal.com"
+                style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.85rem" }}
+              >
+                chris@buildwithportal.com
+              </a>
+              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem", marginTop: "0.5rem" }}>
                 West Seattle, WA
               </p>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem" }}>
                 Residential concrete only
+              </p>
+              <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.75rem", letterSpacing: "0.06em" }}>
+                Licensed · Bonded · Insured
               </p>
               <Link href="/contact" className="btn-cta mt-4" style={{ fontSize: "0.8rem", padding: "0.75rem 1.75rem" }}>
                 Free Estimate

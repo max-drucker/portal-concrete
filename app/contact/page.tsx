@@ -34,6 +34,12 @@ export default function ContactPage() {
           <div style={{ display: "flex", gap: "2.5rem", marginTop: "2.5rem", flexWrap: "wrap" }}>
             <div>
               <p style={{ fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "0.4rem" }}>Phone</p>
+              <a href="tel:+12068296396" style={{ fontFamily: "var(--font-anton, 'Anton', sans-serif)", fontSize: "1.4rem", color: "#FF6B1A", letterSpacing: "0.04em" }}>
+                (206) 829-6396
+              </a>
+            </div>
+            <div>
+              <p style={{ fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "0.4rem" }}>Instagram</p>
               <a href="https://www.instagram.com/portal.llc/" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-anton, 'Anton', sans-serif)", fontSize: "1.4rem", color: "#FFFFFF", letterSpacing: "0.04em" }}>
                 @portal.llc
               </a>

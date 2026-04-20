@@ -67,6 +67,18 @@ export default function Header() {
 
         {/* CTA + mobile toggle */}
         <div className="flex items-center gap-4">
+          <a
+            href="tel:+12068296396"
+            className="hidden md:inline-flex items-center gap-2"
+            style={{
+              fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)",
+              fontSize: "0.8rem",
+              letterSpacing: "0.08em",
+              color: "rgba(255,255,255,0.7)",
+            }}
+          >
+            (206) 829-6396
+          </a>
           <Link href="/contact" className="btn-cta hidden md:inline-block" style={{ padding: "0.6rem 1.5rem", fontSize: "0.8rem" }}>
             Free Estimate
           </Link>
