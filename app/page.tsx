@@ -235,6 +235,45 @@ export default function HomePage() {
       </section>
 
       {/* ────────────────────────────────────────────────────────────
+         MEET CHRIS — subtle skate moment (founder on a driveway)
+      ──────────────────────────────────────────────────────────── */}
+      <section style={{ backgroundColor: "#0A0A0A", padding: "0", position: "relative", overflow: "hidden" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", alignItems: "stretch", gap: 0 }}>
+          {/* Image side */}
+          <div style={{ position: "relative", minHeight: "520px" }}>
+            <Image
+              src="/images/chris/chris-driveway-skate.jpg"
+              alt="Chris Hildebrand, founder of Portal, at a finished residential driveway"
+              fill
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </div>
+          {/* Text side */}
+          <div style={{ padding: "clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 4rem)", display: "flex", flexDirection: "column", justifyContent: "center", backgroundColor: "#0A0A0A" }}>
+            <span style={{ fontFamily: "var(--font-space-grotesk, sans-serif)", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", marginBottom: "1rem" }}>
+              04 · Meet the founder
+            </span>
+            <h2 style={{ fontFamily: "var(--font-anton, sans-serif)", fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "#FFFFFF", lineHeight: 0.92, letterSpacing: "0.005em", marginBottom: "1.75rem" }}>
+              Chris Hildebrand.<br />
+              <span style={{ color: "#FF6B1A" }}>Owner-operator.</span><br />
+              On every job.
+            </h2>
+            <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.72)", lineHeight: 1.7, marginBottom: "1.25rem", maxWidth: "52ch" }}>
+              35+ years pouring concrete in Seattle. Chris handles every bid personally, works every pour, and finishes what he starts. No shell games. No subs you&rsquo;ve never met showing up in a random truck.
+            </p>
+            <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.72)", lineHeight: 1.7, maxWidth: "52ch", marginBottom: "2rem" }}>
+              He reads concrete by how it finishes and, when the work&rsquo;s done, by how it rides.
+            </p>
+            <div>
+              <Link href="/about" style={{ display: "inline-block", fontFamily: "var(--font-anton, sans-serif)", fontSize: "0.9rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#FF6B1A", borderBottom: "1px solid #FF6B1A", paddingBottom: "2px" }}>
+                Read Chris&rsquo;s story →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ────────────────────────────────────────────────────────────
          FINAL CTA — orange band
       ──────────────────────────────────────────────────────────── */}
       <section style={{ backgroundColor: "#FF6B1A", padding: "6rem 1.5rem" }}>

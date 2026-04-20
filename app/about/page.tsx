@@ -17,11 +17,11 @@ export default function AboutPage() {
       ────────────────────────────────────────────────────── */}
       <section style={{ position: "relative", height: "70vh", minHeight: "480px", overflow: "hidden" }}>
         <Image
-          src="/images/chris/chris-skate-hero.jpg"
+          src="/images/chris/chris-bowl-real.png"
           alt="Chris Hildebrand, founder of Portal Concrete, skateboarding in a Seattle bowl"
           fill
           priority
-          style={{ objectFit: "cover", objectPosition: "center 40%" }}
+          style={{ objectFit: "cover", objectPosition: "center 35%" }}
         />
         {/* Scrim */}
         <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.55) 65%, rgba(10,10,10,1) 100%)" }} />
