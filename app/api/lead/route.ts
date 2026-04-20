@@ -47,16 +47,39 @@ function buildEmailHtml(data: {
 </div>`;
 }
 
+async function parseBody(req: NextRequest): Promise<Record<string, string>> {
+  const ct = (req.headers.get("content-type") ?? "").toLowerCase();
+  const out: Record<string, string> = {};
+  try {
+    if (ct.includes("application/json")) {
+      const body = await req.json();
+      for (const [k, v] of Object.entries(body ?? {})) {
+        if (typeof v === "string") out[k] = v;
+      }
+      return out;
+    }
+    // urlencoded or multipart — both work via formData()
+    const formData = await req.formData();
+    for (const [k, v] of formData.entries()) {
+      if (typeof v === "string") out[k] = v;
+    }
+    return out;
+  } catch {
+    return out;
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const formData = await req.formData();
+    const body = await parseBody(req);
 
-    const name = (formData.get("name") as string ?? "").trim();
-    const email = (formData.get("email") as string ?? "").trim();
-    const phone = (formData.get("phone") as string ?? "").trim();
-    const projectType = (formData.get("project_type") as string ?? "").trim();
-    const address = (formData.get("address") as string ?? "").trim();
-    const notes = (formData.get("notes") as string ?? "").trim();
+    // Support both snake_case and camelCase for project_type
+    const name = (body.name ?? "").trim();
+    const email = (body.email ?? "").trim();
+    const phone = (body.phone ?? "").trim();
+    const projectType = (body.project_type ?? body.projectType ?? "").trim();
+    const address = (body.address ?? "").trim();
+    const notes = (body.notes ?? body.message ?? "").trim();
 
     // Validate required fields
     if (!name || !email || !phone || !projectType) {
@@ -90,7 +113,7 @@ export async function POST(req: NextRequest) {
       const vcfBase64 = Buffer.from(vcf).toString("base64");
 
       await resend.emails.send({
-        from: "Portal Website <leads@buildwithportal.com>",
+        from: process.env.LEAD_FROM ?? "Portal Website <leads@buildwithportal.life>",
         to: process.env.LEAD_EMAIL ?? "chris@buildwithportal.com",
         subject: `New lead: ${name} — ${projectType}`,
         html: buildEmailHtml({ name, email, phone, projectType, address, notes }),

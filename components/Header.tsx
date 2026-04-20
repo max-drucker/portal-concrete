@@ -17,30 +17,25 @@ export default function Header() {
 
   return (
     <header
-      style={{ backgroundColor: "#0A0A0A", borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+      style={{ backgroundColor: "rgba(10,10,10,0.9)", borderBottom: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(12px)" }}
       className="sticky top-0 z-50 w-full"
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+      <div className="flex items-center justify-between px-6 py-4 max-w-[1440px] mx-auto">
+        {/* Logo — the real hand-drawn wordmark */}
+        <Link href="/" className="flex items-center" aria-label="Portal — Seattle Concrete, home">
           <Image
-            src="/images/brand/swirlie-logo.png"
-            alt="Portal spiral mark"
-            width={32}
-            height={32}
-            className="invert"
-          />
-          <span
+            src="/images/brand/portal-logo-new.jpeg"
+            alt="Portal — Seattle Concrete"
+            width={140}
+            height={60}
+            priority
             style={{
-              fontFamily: "var(--font-anton, 'Anton', sans-serif)",
-              letterSpacing: "0.12em",
-              fontSize: "1.05rem",
-              textTransform: "uppercase",
-              color: "#FFFFFF",
+              height: "36px",
+              width: "auto",
+              filter: "invert(1)", // flip black → white on dark header
+              objectFit: "contain",
             }}
-          >
-            Portal
-          </span>
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -49,16 +44,14 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
+              className="link-hover"
               style={{
-                fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)",
-                fontSize: "0.8rem",
-                letterSpacing: "0.1em",
+                fontFamily: "var(--font-space-grotesk, sans-serif)",
+                fontSize: "0.78rem",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 color: "rgba(255,255,255,0.7)",
-                transition: "color 0.15s",
               }}
-              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#FFFFFF")}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "rgba(255,255,255,0.7)")}
             >
               {item.label}
             </Link>
@@ -69,17 +62,17 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <a
             href="tel:+12068296396"
-            className="hidden md:inline-flex items-center gap-2"
+            className="hidden md:inline-flex items-center gap-2 link-hover"
             style={{
-              fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)",
+              fontFamily: "var(--font-space-grotesk, sans-serif)",
               fontSize: "0.8rem",
-              letterSpacing: "0.08em",
+              letterSpacing: "0.06em",
               color: "rgba(255,255,255,0.7)",
             }}
           >
             (206) 829-6396
           </a>
-          <Link href="/contact" className="btn-cta hidden md:inline-block" style={{ padding: "0.6rem 1.5rem", fontSize: "0.8rem" }}>
+          <Link href="/contact" className="btn-cta hidden md:inline-block" style={{ padding: "0.65rem 1.4rem", fontSize: "0.75rem" }}>
             Free Estimate
           </Link>
           <button
@@ -104,16 +97,27 @@ export default function Header() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 style={{
-                  fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)",
-                  fontSize: "0.9rem",
+                  fontFamily: "var(--font-space-grotesk, sans-serif)",
+                  fontSize: "0.95rem",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.8)",
+                  color: "rgba(255,255,255,0.85)",
                 }}
               >
                 {item.label}
               </Link>
             ))}
+            <a
+              href="tel:+12068296396"
+              style={{
+                fontFamily: "var(--font-space-grotesk, sans-serif)",
+                fontSize: "0.95rem",
+                color: "#FF6B1A",
+                marginTop: "0.5rem",
+              }}
+            >
+              (206) 829-6396
+            </a>
             <Link href="/contact" className="btn-cta mt-2" onClick={() => setOpen(false)}>
               Free Estimate
             </Link>

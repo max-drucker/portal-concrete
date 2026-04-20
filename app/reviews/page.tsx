@@ -1,127 +1,125 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SwirlieSpiral } from "@/components/Swirlie";
 import { reviews } from "@/lib/reviews";
+import { SwirlieSpiral } from "@/components/Swirlie";
 
 export const metadata: Metadata = {
   title: "Reviews",
-  description: "100+ five-star reviews from West Seattle homeowners who hired Portal Concrete for driveways, patios, stairs, and more.",
+  description:
+    "150+ five-star reviews. 4.9 average rating on Google. Read what West Seattle homeowners say about Portal Concrete.",
 };
 
 export default function ReviewsPage() {
   return (
     <>
-      {/* Header */}
-      <section style={{ padding: "6rem 1.5rem 4rem", backgroundColor: "#0A0A0A" }}>
+      {/* HERO */}
+      <section style={{ padding: "6rem 1.5rem 4rem", backgroundColor: "#0A0A0A", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-          <div style={{ display: "flex", gap: "1rem", alignItems: "center", marginBottom: "1.5rem" }}>
-            <SwirlieSpiral size={32} color="#FF6B1A" />
-            <span style={{ fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>
-              Reviews
+          <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", marginBottom: "1.5rem" }}>
+            <SwirlieSpiral size={24} color="#FF6B1A" />
+            <span style={{ fontFamily: "var(--font-space-grotesk, sans-serif)", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>
+              Reviews · Google · HomeAdvisor · BuildZoom
             </span>
           </div>
-          <h1 style={{ fontFamily: "var(--font-anton, 'Anton', sans-serif)", fontSize: "clamp(3rem, 8vw, 7rem)", color: "#FFFFFF", lineHeight: 0.95 }}>
-            100+ five-star<br />reviews
+          <h1 style={{ fontFamily: "var(--font-anton, sans-serif)", fontSize: "clamp(3rem, 10vw, 8rem)", color: "#FFFFFF", lineHeight: 0.9, letterSpacing: "-0.01em" }}>
+            <span style={{ color: "#FF6B1A" }}>150+</span><br />
+            five-star<br />
+            reviews.
           </h1>
-          <p style={{ fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)", fontSize: "1.1rem", color: "rgba(255,255,255,0.55)", maxWidth: "520px", marginTop: "1.75rem", lineHeight: 1.7 }}>
-            West Seattle homeowners, in their own words.
-          </p>
-
-          {/* Rating summary */}
-          <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginTop: "2.5rem" }}>
+          <div style={{ display: "flex", gap: "2.5rem", marginTop: "2.5rem", alignItems: "baseline", flexWrap: "wrap" }}>
             <div>
-              <span style={{ fontFamily: "var(--font-anton, 'Anton', sans-serif)", fontSize: "4rem", color: "#FFFFFF", lineHeight: 1 }}>4.9</span>
-              <div style={{ display: "flex", gap: "4px", marginTop: "4px" }}>
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} style={{ color: "#FF6B1A", fontSize: "1.2rem" }}>★</span>
-                ))}
-              </div>
-            </div>
-            <div style={{ borderLeft: "1px solid rgba(255,255,255,0.12)", paddingLeft: "1.5rem" }}>
-              <p style={{ fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)", fontSize: "0.85rem", color: "rgba(255,255,255,0.4)" }}>
-                Average rating
-              </p>
-              <p style={{ fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)", fontSize: "0.85rem", color: "rgba(255,255,255,0.6)", marginTop: "0.2rem" }}>
-                100+ reviews on Google
+              <p style={{ fontFamily: "var(--font-anton, sans-serif)", fontSize: "3rem", color: "#FF6B1A", lineHeight: 1 }}>4.9</p>
+              <p style={{ fontFamily: "var(--font-space-grotesk, sans-serif)", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginTop: "0.4rem" }}>
+                ★★★★★ average on Google
               </p>
             </div>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1rem", maxWidth: "460px", lineHeight: 1.65 }}>
+              The ones below are real, pulled from our public profiles. Clients describe Chris and the crew in their own words.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Review grid */}
-      <section style={{ backgroundColor: "#0A0A0A", padding: "2rem 1.5rem 6rem" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1.5rem" }}>
-            {reviews.map((r, i) => (
-              <div
-                key={i}
-                style={{
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  padding: "2rem",
-                  position: "relative",
-                  backgroundColor: i % 7 === 0 ? "#111111" : "#0A0A0A",
-                }}
-              >
-                {/* Stars */}
-                <div style={{ display: "flex", gap: "3px", marginBottom: "1.25rem" }}>
-                  {[...Array(5)].map((_, j) => (
-                    <span key={j} style={{ color: "#FF6B1A", fontSize: "0.75rem" }}>★</span>
+      {/* REVIEWS GRID */}
+      <section style={{ backgroundColor: "#0A0A0A", padding: "4rem 1.5rem" }}>
+        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.25rem" }}>
+          {reviews.map((r, i) => (
+            <div
+              key={i}
+              style={{
+                border: "1px solid rgba(255,255,255,0.08)",
+                padding: "1.75rem 1.65rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.1rem",
+                backgroundColor: "rgba(255,255,255,0.015)",
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div style={{ display: "flex", gap: "0.15rem" }}>
+                  {Array.from({ length: 5 }).map((_, k) => (
+                    <span key={k} style={{ color: "#FF6B1A", fontSize: "0.88rem" }}>★</span>
                   ))}
                 </div>
-                <p style={{
-                  fontFamily: "var(--font-archivo, 'Archivo', sans-serif)",
-                  fontSize: "0.95rem",
-                  color: "rgba(255,255,255,0.8)",
-                  lineHeight: 1.75,
-                  fontStyle: "italic",
-                  marginBottom: "1.5rem",
-                }}>
-                  &ldquo;{r.text}&rdquo;
-                </p>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <div style={{ width: 28, height: 28, borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <span style={{ fontFamily: "var(--font-anton, 'Anton', sans-serif)", fontSize: "0.7rem", color: "rgba(255,255,255,0.5)" }}>
-                      {r.author[0]}
-                    </span>
-                  </div>
-                  <p style={{
-                    fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)",
-                    fontSize: "0.78rem",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "rgba(255,255,255,0.35)",
-                  }}>
-                    {r.author}
-                  </p>
-                </div>
+                <span style={{ fontFamily: "var(--font-archivo, sans-serif)", color: "rgba(255,255,255,0.35)", fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+                  {r.source}
+                </span>
               </div>
-            ))}
-          </div>
-
-          <div style={{ marginTop: "4rem", textAlign: "center" }}>
-            <p style={{ fontFamily: "var(--font-space-grotesk, 'Space Grotesk', sans-serif)", fontSize: "0.9rem", color: "rgba(255,255,255,0.35)", marginBottom: "1rem" }}>
-              See all 100+ reviews on Google
-            </p>
-            <a
-              href="https://www.google.com/search?q=Portal+Concrete+Seattle+reviews"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline"
-            >
-              View on Google
-            </a>
-          </div>
+              <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.95rem", lineHeight: 1.65, flex: 1 }}>
+                &ldquo;{r.quote}&rdquo;
+              </p>
+              <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.82rem", fontWeight: 500, borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "0.9rem" }}>
+                — {r.author}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section style={{ backgroundColor: "#F5F3EF", padding: "5rem 1.5rem", textAlign: "center" }}>
-        <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-          <h2 style={{ fontFamily: "var(--font-anton, 'Anton', sans-serif)", fontSize: "clamp(2rem, 5vw, 3.5rem)", color: "#0A0A0A", marginBottom: "1.5rem" }}>
-            Join them.
+      <section style={{ backgroundColor: "#FF6B1A", padding: "5rem 1.5rem" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", textAlign: "center" }}>
+          <h2 style={{ fontFamily: "var(--font-anton, sans-serif)", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", color: "#0A0A0A", lineHeight: 0.95, marginBottom: "1.5rem" }}>
+            Liked our work?<br />Leave a review.
           </h2>
-          <Link href="/contact" className="btn-cta">Get a Free Estimate</Link>
+          <p style={{ fontSize: "1.05rem", color: "rgba(10,10,10,0.8)", maxWidth: "500px", margin: "0 auto 2rem" }}>
+            We&rsquo;re grateful every time. Google reviews help West Seattle neighbors find us.
+          </p>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <a
+              href="https://www.google.com/search?q=Portal+LLC+Seattle+Concrete"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                backgroundColor: "#0A0A0A",
+                color: "#FFFFFF",
+                fontFamily: "var(--font-anton, sans-serif)",
+                fontSize: "0.9rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                padding: "1rem 2.25rem",
+              }}
+            >
+              Leave a Google Review
+            </a>
+            <Link
+              href="/contact"
+              style={{
+                display: "inline-block",
+                backgroundColor: "transparent",
+                color: "#0A0A0A",
+                fontFamily: "var(--font-anton, sans-serif)",
+                fontSize: "0.9rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                padding: "1rem 2.25rem",
+                border: "1px solid #0A0A0A",
+              }}
+            >
+              Start a New Project
+            </Link>
+          </div>
         </div>
       </section>
     </>

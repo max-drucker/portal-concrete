@@ -24,12 +24,13 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://buildwithportal.life"),
   title: {
     default: "Portal — West Seattle Concrete",
     template: "%s | Portal Concrete",
   },
   description:
-    "West Seattle's residential concrete studio. Driveways, patios, walkways, stairs, retaining walls, and foundation work. 100+ five-star reviews. Owner on every job.",
+    "West Seattle's residential concrete studio. 35+ years, 150+ five-star reviews. Driveways, patios, walkways, stairs, retaining walls, and foundation work. Owner on every job.",
   keywords: [
     "concrete contractor Seattle",
     "West Seattle concrete",
@@ -38,20 +39,30 @@ export const metadata: Metadata = {
     "concrete stairs Seattle",
     "retaining wall Seattle",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://buildwithportal.com",
+    url: "https://buildwithportal.life",
     siteName: "Portal Concrete",
-    title: "Portal — West Seattle Concrete",
+    title: "Portal — Concrete with Conviction.",
     description:
-      "Residential concrete done right. Driveways, patios, stairs, retaining walls. 100+ five-star reviews.",
-    images: [{ url: "/images/hero-stairs.jpeg", width: 1200, height: 630 }],
+      "West Seattle residential concrete. 35+ years. 150+ five-star reviews. Owner on every job. We pour year-round.",
+    images: [{ url: "/images/brand/og-image.jpg", width: 1200, height: 630, alt: "Portal — Concrete with Conviction" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portal — West Seattle Concrete",
-    description: "Residential concrete done right. 100+ five-star reviews.",
+    title: "Portal — Concrete with Conviction.",
+    description: "West Seattle residential concrete. 35+ years. 150+ five-star reviews.",
+    images: ["/images/brand/og-image.jpg"],
   },
 };
 
