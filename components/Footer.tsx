@@ -22,13 +22,13 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: "#0A0A0A", borderTop: "1px solid rgba(255,255,255,0.08)", padding: "5rem 1.5rem 3rem", position: "relative", overflow: "hidden" }}>
       {/* Giant faded logo watermark bottom-right */}
-      <div aria-hidden style={{ position: "absolute", bottom: "-60px", right: "-80px", opacity: 0.04, pointerEvents: "none" }}>
+      <div aria-hidden style={{ position: "absolute", bottom: "-50px", right: "-100px", opacity: 0.035, pointerEvents: "none" }}>
         <Image
-          src="/images/brand/portal-logo-new.jpeg"
+          src="/images/brand/portal-logo-cropped.jpeg"
           alt=""
-          width={600}
-          height={300}
-          style={{ filter: "invert(1)" }}
+          width={1700}
+          height={900}
+          style={{ width: "900px", height: "auto", filter: "invert(1)", objectFit: "contain" }}
         />
       </div>
 
@@ -36,11 +36,11 @@ export default function Footer() {
         {/* Top: logo + tagline */}
         <div style={{ marginBottom: "3.5rem", paddingBottom: "3rem", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
           <Image
-            src="/images/brand/portal-logo-new.jpeg"
+            src="/images/brand/portal-logo-cropped.jpeg"
             alt="Portal — Seattle Concrete"
-            width={280}
-            height={120}
-            style={{ height: "70px", width: "auto", filter: "invert(1)", marginBottom: "1.5rem" }}
+            width={1700}
+            height={900}
+            style={{ height: "110px", width: "auto", filter: "invert(1)", objectFit: "contain", marginBottom: "1.5rem" }}
           />
           <p style={{ fontFamily: "var(--font-anton, sans-serif)", fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", color: "#FFFFFF", letterSpacing: "0.02em", maxWidth: "540px", lineHeight: 1.1 }}>
             Concrete with conviction. <span style={{ color: "#FF6B1A" }}>West Seattle since the 80s.</span>

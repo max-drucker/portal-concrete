@@ -24,15 +24,15 @@ export default function Header() {
         {/* Logo — the real hand-drawn wordmark */}
         <Link href="/" className="flex items-center" aria-label="Portal — Seattle Concrete, home">
           <Image
-            src="/images/brand/portal-logo-new.jpeg"
+            src="/images/brand/portal-logo-cropped.jpeg"
             alt="Portal — Seattle Concrete"
-            width={140}
-            height={60}
+            width={1700}
+            height={900}
             priority
             style={{
-              height: "36px",
+              height: "56px",
               width: "auto",
-              filter: "invert(1)", // flip black → white on dark header
+              filter: "invert(1)",
               objectFit: "contain",
             }}
           />
