@@ -49,17 +49,18 @@ export default function HomePage() {
          HERO — logo-led, eyebrow stamp, massive display, orange CTA
       ──────────────────────────────────────────────────────────── */}
       <section style={{ position: "relative", padding: "6rem 1.5rem 5rem", overflow: "hidden" }}>
-        {/* Faint background photo */}
+        {/* Faint background logo */}
         <div
           aria-hidden
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/images/driveways/driveway_5_modern_garage.jpeg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center 70%",
-            opacity: 0.14,
-            filter: "grayscale(1) contrast(1.1)",
+            backgroundImage: "url('/images/brand/portal-logo-homepage.jpg')",
+            backgroundSize: "min(1100px, 95vw) auto",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right 8% center",
+            opacity: 0.18,
+            filter: "grayscale(1) contrast(1.15)",
           }}
         />
         {/* Scrim */}
