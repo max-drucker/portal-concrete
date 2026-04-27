@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header
-      style={{ backgroundColor: "rgba(10,10,10,0.9)", borderBottom: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(12px)" }}
+      style={{ backgroundColor: "rgba(255,255,255,0.96)", borderBottom: "1px solid rgba(10,10,10,0.1)", backdropFilter: "blur(12px)" }}
       className="sticky top-0 z-50 w-full"
     >
       <div className="flex items-center justify-between px-6 py-4 max-w-[1440px] mx-auto">
@@ -32,7 +32,6 @@ export default function Header() {
             style={{
               height: "56px",
               width: "auto",
-              filter: "invert(1)",
               objectFit: "contain",
             }}
           />
@@ -50,7 +49,7 @@ export default function Header() {
                 fontSize: "0.78rem",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.7)",
+                color: "rgba(10,10,10,0.68)",
               }}
             >
               {item.label}
@@ -67,7 +66,7 @@ export default function Header() {
               fontFamily: "var(--font-space-grotesk, sans-serif)",
               fontSize: "0.8rem",
               letterSpacing: "0.06em",
-              color: "rgba(255,255,255,0.7)",
+              color: "rgba(10,10,10,0.68)",
             }}
           >
             (206) 829-6396
@@ -80,16 +79,16 @@ export default function Header() {
             className="md:hidden flex flex-col gap-1.5 p-1"
             aria-label="Toggle menu"
           >
-            <span style={{ display: "block", width: 22, height: 1.5, backgroundColor: "#FFFFFF", transition: "transform 0.2s", transform: open ? "translateY(6px) rotate(45deg)" : "none" }} />
-            <span style={{ display: "block", width: 22, height: 1.5, backgroundColor: "#FFFFFF", opacity: open ? 0 : 1, transition: "opacity 0.2s" }} />
-            <span style={{ display: "block", width: 22, height: 1.5, backgroundColor: "#FFFFFF", transition: "transform 0.2s", transform: open ? "translateY(-6px) rotate(-45deg)" : "none" }} />
+            <span style={{ display: "block", width: 22, height: 1.5, backgroundColor: "#0A0A0A", transition: "transform 0.2s", transform: open ? "translateY(6px) rotate(45deg)" : "none" }} />
+            <span style={{ display: "block", width: 22, height: 1.5, backgroundColor: "#0A0A0A", opacity: open ? 0 : 1, transition: "opacity 0.2s" }} />
+            <span style={{ display: "block", width: 22, height: 1.5, backgroundColor: "#0A0A0A", transition: "transform 0.2s", transform: open ? "translateY(-6px) rotate(-45deg)" : "none" }} />
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div style={{ backgroundColor: "#0A0A0A", borderTop: "1px solid rgba(255,255,255,0.08)" }} className="md:hidden px-6 pb-6 pt-4">
+        <div style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid rgba(10,10,10,0.1)" }} className="md:hidden px-6 pb-6 pt-4">
           <nav className="flex flex-col gap-4">
             {nav.map((item) => (
               <Link
@@ -101,7 +100,7 @@ export default function Header() {
                   fontSize: "0.95rem",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.85)",
+                  color: "rgba(10,10,10,0.78)",
                 }}
               >
                 {item.label}

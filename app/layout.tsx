@@ -53,14 +53,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://buildwithportal.life",
     siteName: "Portal Concrete",
-    title: "Portal — Concrete with Conviction.",
+    title: "Portal — Seattle Concrete",
     description:
       "West Seattle residential concrete. 35+ years. 150+ five-star reviews. Owner on every job. We pour year-round.",
-    images: [{ url: "/images/brand/og-image.jpg", width: 1200, height: 630, alt: "Portal — Concrete with Conviction" }],
+    images: [{ url: "/images/brand/og-image.jpg", width: 1200, height: 630, alt: "Portal Seattle Concrete" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portal — Concrete with Conviction.",
+    title: "Portal — Seattle Concrete",
     description: "West Seattle residential concrete. 35+ years. 150+ five-star reviews.",
     images: ["/images/brand/og-image.jpg"],
   },

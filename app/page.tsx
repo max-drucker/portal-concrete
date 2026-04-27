@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SwirlieSpiral } from "@/components/Swirlie";
 import { featuredReviews } from "@/lib/reviews";
 
 const services = [
@@ -46,60 +45,23 @@ export default function HomePage() {
   return (
     <>
       {/* ────────────────────────────────────────────────────────────
-         HERO — logo-led, eyebrow stamp, massive display, orange CTA
+         HERO — simple logo front page
       ──────────────────────────────────────────────────────────── */}
-      <section style={{ position: "relative", padding: "6rem 1.5rem 5rem", overflow: "hidden" }}>
-        {/* Faint background logo */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: "url('/images/brand/portal-logo-homepage.jpg')",
-            backgroundSize: "min(1100px, 95vw) auto",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "right 8% center",
-            opacity: 0.18,
-            filter: "grayscale(1) contrast(1.15)",
-          }}
-        />
-        {/* Scrim */}
-        <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(10,10,10,0.85) 0%, #0A0A0A 85%)" }} />
-
-        <div style={{ position: "relative", maxWidth: "1280px", margin: "0 auto" }}>
-          {/* Eyebrow */}
-          <div style={{ display: "flex", gap: "0.8rem", alignItems: "center", marginBottom: "2.5rem" }}>
-            <SwirlieSpiral size={24} color="#FF6B1A" />
-            <span style={{ fontFamily: "var(--font-space-grotesk, sans-serif)", fontSize: "0.75rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)" }}>
-              West Seattle · Residential Concrete · Est. Owner-Operated
-            </span>
-          </div>
-
-          {/* Massive wordmark headline */}
-          <h1
+      <section style={{ backgroundColor: "#FFFFFF", padding: "clamp(3rem, 8vw, 6rem) 1.5rem clamp(4rem, 9vw, 7rem)", overflow: "hidden" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", justifyContent: "center" }}>
+          <Image
+            src="/images/brand/portal-logo-homepage-cropped.jpg"
+            alt="Portal Seattle Concrete"
+            width={2160}
+            height={1320}
+            priority
+            sizes="(max-width: 768px) 92vw, 1100px"
             style={{
-              fontFamily: "var(--font-anton, sans-serif)",
-              fontSize: "clamp(3.5rem, 11vw, 9rem)",
-              color: "#FFFFFF",
-              lineHeight: 0.88,
-              letterSpacing: "-0.01em",
-              marginBottom: "2rem",
-              maxWidth: "15ch",
+              width: "min(1100px, 92vw)",
+              height: "auto",
+              objectFit: "contain",
             }}
-          >
-            Concrete with<br />
-            <span style={{ color: "#FF6B1A" }}>conviction.</span>
-          </h1>
-
-          <p style={{ maxWidth: "560px", fontSize: "1.15rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.6, marginBottom: "2.5rem" }}>
-            35+ years of pouring the driveways, patios, and walls that West Seattle homeowners actually live with. Owner on every job. Year-round pours, rain or shine.
-          </p>
-
-          {/* CTAs */}
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/contact" className="btn-cta">Get a Free Estimate</Link>
-            <a href="tel:+12068296396" className="btn-outline">(206) 829-6396</a>
-          </div>
+          />
         </div>
       </section>
 
